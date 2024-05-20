@@ -61,7 +61,7 @@ class _ReviewPageState extends State<ReviewPage>
                   color: Colors.white,),
                   onPressed: () {submitreview();
                    final snackBar = SnackBar(
-                      content: Text("${userData.name} ${userData.surname}you review is recieved"),
+                      content: Text("${userData.name} ${userData.surname} you review is recieved"),
                     );
                     ScaffoldMessenger.of(context).showSnackBar(snackBar);
                   },
