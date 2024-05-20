@@ -213,13 +213,16 @@ Future<void> _loadUserData() async {
                     },
                   ),
                   const SizedBox(height: 20),
-                  ElevatedButton(
+                  ElevatedButton.icon(
+                    icon:  const Icon(
+                  Icons.update,
+                  color: Colors.white,),
                     onPressed: _updateUserProfile,
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(double.infinity, 40),
                       backgroundColor: const Color.fromARGB(255, 54, 157, 75),
                     ),
-                    child: const Text(
+                    label: const Text(
                       'Update Profile',
                       style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                     ),

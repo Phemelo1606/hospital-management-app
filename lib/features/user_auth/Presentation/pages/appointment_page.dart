@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hospital_management_app/features/user_auth/Presentation/widgets/form_container_widget.dart';
@@ -18,7 +17,7 @@ class _AppointmentPageState extends State<AppointmentPage> {
   late TextEditingController dateController;
   late TextEditingController timeController;
   late TextEditingController patientNameController;
-  //DateTime _selectedDate = DateTime.now();
+  
 
   @override
   void initState() {
@@ -58,7 +57,7 @@ class _AppointmentPageState extends State<AppointmentPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Full Name: ${userData.name} ${userData.surname}"),
+                Text("Full Name: ${userData.name} ${userData.surname}",style: const TextStyle(fontWeight: FontWeight.bold),),
                 const SizedBox(height: 40),
                 const Text("Select a date for Appointment:"),
                 const SizedBox(height: 20),
@@ -167,7 +166,10 @@ class _AppointmentPageState extends State<AppointmentPage> {
                   child: SizedBox(
                     height: 40,
                     width: 150,
-                    child: ElevatedButton(
+                    child: ElevatedButton.icon(
+                      icon:  const Icon(
+                  Icons.send,
+                  color: Colors.white,),
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(double.infinity, 40),
                         backgroundColor: const Color.fromARGB(255, 54, 157, 75),
@@ -186,7 +188,7 @@ class _AppointmentPageState extends State<AppointmentPage> {
                         );
                         ScaffoldMessenger.of(context).showSnackBar(snackBar);
                       },
-                      child: const Text(
+                      label: const Text(
                         "Submit",
                         style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                       ),

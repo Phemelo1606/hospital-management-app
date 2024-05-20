@@ -157,7 +157,7 @@ class _AdminPageState extends State<AdminRegistrationPage>
       ),
     );
   }
-  goToLogin(BuildContext context) => Navigator.of(context).pushNamed(RouteManager.adminPage);
+  goToLogin(BuildContext context) => Navigator.of(context).pushNamedAndRemoveUntil(RouteManager.adminPage,(route)=>false);
   
 
   _signup() async{

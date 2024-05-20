@@ -50,7 +50,10 @@ class _AdminPageState extends State<AdminPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
+                ElevatedButton.icon(
+                  icon:  const Icon(
+                  Icons.list,
+                  color: Colors.white,),
                   onPressed: () {
                     setState(() {
                       showAppointments = true;
@@ -61,10 +64,13 @@ class _AdminPageState extends State<AdminPage> {
                         backgroundColor: const Color.fromARGB(255, 54, 157, 75),
                         
                       ),
-                  child: const Text('View Appointments',style: TextStyle(color: Colors.white),),
+                  label: const Text('View Appointments',style: TextStyle(color: Colors.white),),
                 ),
                 const SizedBox(width: 10),
-                ElevatedButton(
+                ElevatedButton.icon(
+                  icon:  const Icon(
+                  Icons.list,
+                  color: Colors.white,),
                   onPressed: () {
                     setState(() {
                       showAppointments = false;
@@ -76,7 +82,7 @@ class _AdminPageState extends State<AdminPage> {
                         backgroundColor: const Color.fromARGB(255, 54, 157, 75),
                         
                       ),
-                  child: const Text('View Reviews',style: TextStyle(color: Colors.white),),
+                  label: const Text('View Reviews',style: TextStyle(color: Colors.white),),
                 ),
               ],
             ),
@@ -89,7 +95,10 @@ class _AdminPageState extends State<AdminPage> {
             height: 40,
             width: 150,
             //logout button
-            child: ElevatedButton(
+            child: ElevatedButton.icon(
+              icon:  const Icon(
+                  Icons.logout,
+                  color: Colors.white,),
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 40), 
                 backgroundColor: const Color.fromARGB(255, 54, 157, 75),
@@ -103,7 +112,7 @@ class _AdminPageState extends State<AdminPage> {
                 goToSignUp(context);
 
               },
-              child: const Text("Logout",style: TextStyle(color: Colors.white),),
+              label: const Text("Logout",style: TextStyle(color: Colors.white),),
             ),
           ),
           const SizedBox(height: 30,)

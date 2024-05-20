@@ -31,7 +31,7 @@ class _MainPageState extends State<MainPage>
           const SizedBox(
             height: 10,
           ),
-           Text("Welcome : ${userData.name} ${userData.surname} "),
+           Text("Welcome : ${userData.name} ${userData.surname} ", style: const TextStyle(fontWeight: FontWeight.bold,),),
           const SizedBox(
             height: 10,
           ),
@@ -40,18 +40,21 @@ class _MainPageState extends State<MainPage>
               SizedBox(
                 height: 40,
                 width: 200,
-                child: ElevatedButton(
+                child: ElevatedButton.icon( icon:  const Icon(
+                  Icons.calendar_month,
+                  color: Colors.white,),
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(double.infinity, 40),
                     backgroundColor: const Color.fromARGB(255, 54, 157, 75),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
+                    
                   ),
                   onPressed: () {
                      Navigator.of(context).pushNamed(RouteManager.appointmentPage);
                   },
-                  child: const Text("Appointments Page",style: TextStyle(color: Colors.white),),
+                  label: const Text("Appointments Page",style: TextStyle(color: Colors.white),),
                 ),
               ),
               const SizedBox(
@@ -60,7 +63,10 @@ class _MainPageState extends State<MainPage>
           SizedBox(
             height: 40,
             width: 200,
-            child: ElevatedButton(
+            child: ElevatedButton.icon(
+              icon:  const Icon(
+                  Icons.person,
+                  color: Colors.white,),
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 40), 
                 backgroundColor: const Color.fromARGB(255, 54, 157, 75),
@@ -71,7 +77,7 @@ class _MainPageState extends State<MainPage>
               onPressed: () {
                 Navigator.of(context).pushNamed(RouteManager.profilePage);
               },
-              child: const Text("My-profile Page",style: TextStyle(color: Colors.white),),
+              label: const Text("My-profile Page",style: TextStyle(color: Colors.white),),
             ),
           ),
             ],
@@ -83,7 +89,10 @@ class _MainPageState extends State<MainPage>
           SizedBox(
             height: 40,
             width: 200,
-            child: ElevatedButton(
+            child: ElevatedButton.icon(
+              icon:  const Icon(
+                  Icons.reviews_outlined,
+                  color: Colors.white,),
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 40), 
                 backgroundColor: const Color.fromARGB(255, 54, 157, 75),
@@ -94,7 +103,7 @@ class _MainPageState extends State<MainPage>
               onPressed: () {
                 Navigator.of(context).pushNamed(RouteManager.reviewPage);
               },
-              child: const Text("Review Page",style: TextStyle(color: Colors.white),),
+              label: const Text("Review Page",style: TextStyle(color: Colors.white),),
             ),
           ),
           const SizedBox(
@@ -104,7 +113,10 @@ class _MainPageState extends State<MainPage>
             height: 40,
             width: 150,
             //logout button
-            child: ElevatedButton(
+            child: ElevatedButton.icon(
+              icon:  const Icon(
+                  Icons.logout,
+                  color: Colors.white,),
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 40),
                 backgroundColor: const Color.fromARGB(255, 54, 157, 75),
@@ -118,7 +130,7 @@ class _MainPageState extends State<MainPage>
                 goToLogin(context);
 
               },
-              child: const Text("Logout",style: TextStyle(color: Colors.white),),
+              label: const Text("Logout",style: TextStyle(color: Colors.white),),
             ),
           ),
         ],

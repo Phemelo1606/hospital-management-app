@@ -55,7 +55,10 @@ class _ReviewPageState extends State<ReviewPage>
               const SizedBox(
                 height: 30,
               ),
-              ElevatedButton(
+              ElevatedButton.icon(
+                icon:  const Icon(
+                  Icons.send,
+                  color: Colors.white,),
                   onPressed: () {submitreview();
                    final snackBar = SnackBar(
                       content: Text("${userData.name} ${userData.surname}you review is recieved"),
@@ -68,7 +71,7 @@ class _ReviewPageState extends State<ReviewPage>
                       
                     ),
                     
-                  child: const Text("submit Reviews",style: TextStyle(color: Colors.white),))
+                  label: const Text("submit Reviews",style: TextStyle(color: Colors.white),))
             ],
           ),
         ),

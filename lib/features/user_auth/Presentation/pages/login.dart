@@ -106,14 +106,17 @@ class _LoginPageState extends State<LoginPage> {
                     height: 30,
                   ),
                  //login button
-                ElevatedButton(
+                ElevatedButton.icon(
+                  icon:  const Icon(
+                  Icons.login,
+                  color: Colors.white,),
                     onPressed: _logIn,
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(double.infinity, 40), 
                       backgroundColor: const Color.fromARGB(255, 54, 157, 75),
                      
                     ),
-                    child: const Text('LogIn',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                    label: const Text('LogIn',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
                           ),
 
                     const SizedBox(height: 5,),
