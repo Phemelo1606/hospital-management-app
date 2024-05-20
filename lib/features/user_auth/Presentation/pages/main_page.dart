@@ -35,25 +35,27 @@ class _MainPageState extends State<MainPage>
           const SizedBox(
             height: 10,
           ),
-          SizedBox(
-            height: 40,
-            width: 200,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size(double.infinity, 40),
-                backgroundColor: const Color.fromARGB(255, 54, 157, 75),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+          Row(
+            children: [
+              SizedBox(
+                height: 40,
+                width: 200,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(double.infinity, 40),
+                    backgroundColor: const Color.fromARGB(255, 54, 157, 75),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  onPressed: () {
+                     Navigator.of(context).pushNamed(RouteManager.appointmentPage);
+                  },
+                  child: const Text("Appointments Page",style: TextStyle(color: Colors.white),),
                 ),
               ),
-              onPressed: () {
-                 Navigator.of(context).pushNamed(RouteManager.appointmentPage);
-              },
-              child: const Text("Appointments Page",style: TextStyle(color: Colors.white),),
-            ),
-          ),
-          const SizedBox(
-            height: 10,
+              const SizedBox(
+            width: 10,
           ),
           SizedBox(
             height: 40,
@@ -72,6 +74,9 @@ class _MainPageState extends State<MainPage>
               child: const Text("My-profile Page",style: TextStyle(color: Colors.white),),
             ),
           ),
+            ],
+          ),
+          
           const SizedBox(
             height: 10,
           ),
