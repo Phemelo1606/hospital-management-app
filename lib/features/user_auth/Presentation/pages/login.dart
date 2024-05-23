@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 152, 241, 170),
       appBar: AppBar(
-        title: const Text('Login Page',style: TextStyle(color: Colors.white),),
+        title: const Text('Hospital Management App',style: TextStyle(color: Colors.white),),
         backgroundColor: const Color.fromARGB(255, 54, 157, 75),
       ),
       body:  Center(

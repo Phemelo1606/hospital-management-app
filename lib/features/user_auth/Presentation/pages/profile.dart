@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hospital_management_app/features/user_auth/Presentation/widgets/form_container_widget.dart';
+import 'package:hospital_management_app/routes/routes.dart';
 
 
 class ProfilePage extends StatefulWidget {
@@ -96,6 +97,16 @@ Future<void> _loadUserData() async {
       return Scaffold(
       backgroundColor: const Color.fromARGB(255, 152, 241, 170),
       appBar: AppBar(
+        // leading: ElevatedButton(style: ElevatedButton.styleFrom(
+        //               minimumSize: const Size(double.infinity, 40),
+        //               backgroundColor: const Color.fromARGB(255, 54, 157, 75),
+        //               shape: RoundedRectangleBorder(
+        //                 borderRadius: BorderRadius.circular(20),
+        //               ),
+                      
+        //             ), onPressed: () {
+        //   Navigator.of(context).popAndPushNamed(RouteManager.mainPage);
+        // },child: const Icon(Icons.arrow_back,color: Colors.white,),),
         title: const Text('Profile Page', style: TextStyle(color: Colors.white)),
         backgroundColor: const Color.fromARGB(255, 54, 157, 75),
       ),
@@ -115,7 +126,26 @@ Future<void> _loadUserData() async {
                               color: Color.fromARGB(255, 54, 157, 75),
                             ),
 
-                            Text("User: ${_nameController.text}  ${_surnameController.text} ", style: const TextStyle(fontWeight: FontWeight.bold),),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("User: ${_nameController.text}  ${_surnameController.text} ",
+                                 style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+                                 ),
+                                 ElevatedButton( 
+                                    
+                                      onPressed: (){goToNavigation(context);},
+                                      style: ElevatedButton.styleFrom(
+                                        minimumSize: const Size(1,40), 
+                                        backgroundColor: const Color.fromARGB(255, 54, 157, 75),
+                                      
+                                      ),
+                                      child: const Center(
+                                        child: Icon(
+                                          Icons.notifications_active, color: Colors.white,),
+                                      ),
+                                      ),                            ],
+                            ),
                             const SizedBox(height: 5,),
                   FormContainerWidget(
                     hintText: "Name",
@@ -235,4 +265,5 @@ Future<void> _loadUserData() async {
       ),
     );
   }
+  goToNavigation(BuildContext context) => Navigator.of(context).pushNamedAndRemoveUntil(RouteManager.notificationPage,(route)=>false);
 }

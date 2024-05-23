@@ -5,6 +5,7 @@ import 'package:hospital_management_app/features/user_auth/Presentation/pages/ad
 import 'package:hospital_management_app/features/user_auth/Presentation/pages/appointment_page.dart';
 import 'package:hospital_management_app/features/user_auth/Presentation/pages/login.dart';
 import 'package:hospital_management_app/features/user_auth/Presentation/pages/main_page.dart';
+import 'package:hospital_management_app/features/user_auth/Presentation/pages/notification.dart';
 import 'package:hospital_management_app/features/user_auth/Presentation/pages/profile.dart';
 import 'package:hospital_management_app/features/user_auth/Presentation/pages/review_page.dart';
 import 'package:hospital_management_app/features/user_auth/Presentation/pages/user_sign_up.dart';
@@ -20,6 +21,7 @@ class RouteManager
   static const String reviewPage = "/reviewPage";
   static const String adminSignUp = "/adminSignUp";
   static const String profilePage = "/profilePage";
+  static const String notificationPage = '/notificationPage';
 
   static Route<dynamic> generateRoute (RouteSettings settings) {
     switch (settings.name){
@@ -54,6 +56,10 @@ class RouteManager
 
         case profilePage:
         return MaterialPageRoute(builder: (context) => const ProfilePage(),
+        );
+
+        case notificationPage:
+        return MaterialPageRoute(builder: (context)=> const NotificationPage(),
         );
 
         default:
