@@ -97,16 +97,16 @@ Future<void> _loadUserData() async {
       return Scaffold(
       backgroundColor: const Color.fromARGB(255, 152, 241, 170),
       appBar: AppBar(
-        // leading: ElevatedButton(style: ElevatedButton.styleFrom(
-        //               minimumSize: const Size(double.infinity, 40),
-        //               backgroundColor: const Color.fromARGB(255, 54, 157, 75),
-        //               shape: RoundedRectangleBorder(
-        //                 borderRadius: BorderRadius.circular(20),
-        //               ),
+         leading: ElevatedButton(style: ElevatedButton.styleFrom(
+                       minimumSize: const Size(double.infinity, 40),
+                       backgroundColor: const Color.fromARGB(255, 54, 157, 75),
+                       shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(20),
+                       ),
                       
-        //             ), onPressed: () {
-        //   Navigator.of(context).popAndPushNamed(RouteManager.mainPage);
-        // },child: const Icon(Icons.arrow_back,color: Colors.white,),),
+                     ), onPressed: () {
+           Navigator.of(context).popAndPushNamed(RouteManager.mainPage);
+        },child: const Icon(Icons.arrow_back,color: Colors.white,),),
         title: const Text('Profile Page', style: TextStyle(color: Colors.white)),
         backgroundColor: const Color.fromARGB(255, 54, 157, 75),
       ),

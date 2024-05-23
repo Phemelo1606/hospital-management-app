@@ -63,7 +63,7 @@ class _NotificationPageState extends State<NotificationPage> {
                       
                     ),
                     onPressed: () {
-                       Navigator.of(context).popAndPushNamed(RouteManager.profilePage);
+                       Navigator.of(context).pushNamed(RouteManager.profilePage);
                     },
                     label: const Text("Back",style: TextStyle(color: Colors.white),),
                   ),

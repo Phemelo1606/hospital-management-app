@@ -81,7 +81,7 @@ class _AdminPageState extends State<AdminPage> {
                       backgroundColor: const Color.fromARGB(255, 54, 157, 75),
                     ),
                     label: const Text(
-                      'View Appointments',
+                      'Appointments',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
@@ -102,7 +102,7 @@ class _AdminPageState extends State<AdminPage> {
                       backgroundColor: const Color.fromARGB(255, 54, 157, 75),
                     ),
                     label: const Text(
-                      'View Reviews',
+                      'Reviews',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
