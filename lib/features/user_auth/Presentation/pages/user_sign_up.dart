@@ -193,11 +193,11 @@ class _SignUpPageState extends State<SignUpPage> {
                     controller: _passwordController,
                     validator: (value) {
                       //validates password
-                      if (value!.isEmpty) {
+                      if (value == null || value.isEmpty) {
                         return 'please enter your password';
                       }
-                      if ((value.length == 9) ||
-                          !value.contains('@')) {
+                      if ((value.length < 8) &&
+                          (!value.contains('@'))) {
                         return 'password must be 8 charecters\nand should contain \'@\' character';
                       }
                       return null;

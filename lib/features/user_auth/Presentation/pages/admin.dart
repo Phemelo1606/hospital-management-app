@@ -33,18 +33,19 @@ class _AdminPageState extends State<AdminPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    final adminData = Provider.of<AdminData>(context);
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 152, 241, 170),
-      appBar: AppBar(
-        title: const Text(
-          'Admin Page',
-          style: TextStyle(color: Colors.white),
-        ),
-        backgroundColor: const Color.fromARGB(255, 54, 157, 75),
+Widget build(BuildContext context) {
+  final adminData = Provider.of<AdminData>(context);
+  return Scaffold(
+    backgroundColor: const Color.fromARGB(255, 152, 241, 170),
+    appBar: AppBar(
+      title: const Text(
+        'Admin Page',
+        style: TextStyle(color: Colors.white),
       ),
-      body: Column(
+      backgroundColor: const Color.fromARGB(255, 54, 157, 75),
+    ),
+    body: SingleChildScrollView(
+      child: Column(
         children: [
           const Icon(
             Icons.account_circle,
@@ -111,7 +112,8 @@ class _AdminPageState extends State<AdminPage> {
             ),
           ),
           const SizedBox(height: 10),
-          Expanded(
+          SizedBox(
+            height: 300, // Specify a fixed height for the list
             child: showAppointments ? _buildAppointmentsList() : _buildReviewsList(),
           ),
           const SizedBox(height: 20),
@@ -187,8 +189,9 @@ class _AdminPageState extends State<AdminPage> {
           const SizedBox(height: 30),
         ],
       ),
-    );
-  }
+    ),
+  );
+}
 
   goToSignUp(BuildContext context) => Navigator.of(context).pushNamedAndRemoveUntil(RouteManager.signUpPage, (route) => false);
 
